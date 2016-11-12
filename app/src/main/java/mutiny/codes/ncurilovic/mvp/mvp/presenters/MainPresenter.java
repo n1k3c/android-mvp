@@ -1,9 +1,10 @@
-package mutiny.codes.mvp.mvp.presenters;
+package mutiny.codes.ncurilovic.mvp.mvp.presenters;
 
-import mutiny.codes.mvp.mvp.Main;
-import mutiny.codes.mvp.mvp.interactors.Interactor;
-import mutiny.codes.mvp.mvp.interactors.SayHello;
-import mutiny.codes.mvp.mvp.listeners.Listener;
+import javax.inject.Inject;
+
+import mutiny.codes.ncurilovic.mvp.mvp.Main;
+import mutiny.codes.ncurilovic.mvp.mvp.interactors.Interactor;
+import mutiny.codes.ncurilovic.mvp.mvp.listeners.Listener;
 
 /**
  * Created by nikola on 12.11.16..
@@ -14,9 +15,10 @@ public class MainPresenter implements Main.Presenter, Listener<String> {
 
     Interactor.SayHello sayHelloInteractor;
 
-    public MainPresenter(Main.View view) {
+    @Inject
+    public MainPresenter(Main.View view, Interactor.SayHello sayHelloInteractor) {
         this.view = view;
-        sayHelloInteractor = new SayHello();
+        this.sayHelloInteractor = sayHelloInteractor;
     }
 
     @Override

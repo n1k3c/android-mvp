@@ -1,11 +1,18 @@
-package mutiny.codes.mvp.mvp.interactors;
+package mutiny.codes.ncurilovic.mvp.mvp.interactors;
 
-import mutiny.codes.mvp.mvp.listeners.Listener;
+import javax.inject.Inject;
+
+import mutiny.codes.ncurilovic.mvp.mvp.listeners.Listener;
 
 /**
  * Created by nikola on 12.11.16..
  */
-public class SayHello implements Interactor.SayHello {
+public class SayHelloInteractor implements Interactor.SayHello {
+
+    @Inject
+    public SayHelloInteractor() {
+
+    }
 
     public static final String HELLO_WORLD = "Hello world!";
 

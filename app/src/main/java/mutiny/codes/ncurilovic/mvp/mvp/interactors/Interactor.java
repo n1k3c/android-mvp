@@ -1,6 +1,6 @@
-package mutiny.codes.mvp.mvp.interactors;
+package mutiny.codes.ncurilovic.mvp.mvp.interactors;
 
-import mutiny.codes.mvp.mvp.listeners.Listener;
+import mutiny.codes.ncurilovic.mvp.mvp.listeners.Listener;
 
 /**
  * Created by nikola on 12.11.16..

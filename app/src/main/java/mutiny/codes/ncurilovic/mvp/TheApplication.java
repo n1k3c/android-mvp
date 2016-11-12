@@ -1,9 +1,9 @@
-package mutiny.codes.mvp;
+package mutiny.codes.ncurilovic.mvp;
 
 import android.app.Application;
 
-import mutiny.codes.mvp.dagger.components.AppComponent;
-import mutiny.codes.mvp.dagger.components.DaggerAppComponent;
+import mutiny.codes.ncurilovic.mvp.dagger.components.AppComponent;
+import mutiny.codes.ncurilovic.mvp.dagger.components.DaggerAppComponent;
 import timber.log.Timber;
 
 /**

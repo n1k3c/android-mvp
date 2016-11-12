@@ -1,10 +1,11 @@
-package mutiny.codes.mvp.dagger.components.modules;
+package mutiny.codes.ncurilovic.mvp.dagger.modules;
 
 import android.content.Context;
 
 import dagger.Module;
 import dagger.Provides;
-import mutiny.codes.mvp.TheApplication;
+import mutiny.codes.ncurilovic.mvp.TheApplication;
+
 
 /**
  * Created by nikola on 12.11.16..

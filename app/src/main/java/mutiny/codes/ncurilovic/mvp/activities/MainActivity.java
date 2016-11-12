@@ -1,12 +1,15 @@
-package mutiny.codes.mvp.activities;
+package mutiny.codes.ncurilovic.mvp.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
-import mutiny.codes.mvp.R;
-import mutiny.codes.mvp.mvp.Main;
-import mutiny.codes.mvp.mvp.presenters.MainPresenter;
+import mutiny.codes.ncurilovic.mvp.R;
+import mutiny.codes.ncurilovic.mvp.dagger.components.AppComponent;
+import mutiny.codes.ncurilovic.mvp.dagger.modules.MainModule;
+import mutiny.codes.ncurilovic.mvp.mvp.Main;
 import timber.log.Timber;
 
 /**
@@ -14,6 +17,7 @@ import timber.log.Timber;
  */
 public class MainActivity extends BaseActivity implements Main.View {
 
+    @Inject
     Main.Presenter presenter;
 
     @Bind(R.id.tvHello)
@@ -23,14 +27,19 @@ public class MainActivity extends BaseActivity implements Main.View {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        presenter = new MainPresenter(this);
-
         presenter.getMessage();
     }
 
     @Override
     protected int getContentViewResource() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    protected void injectDependencies(AppComponent appComponent) {
+        appComponent
+                .plus(new MainModule(this))
+                .inject(this);
     }
 
     @Override
