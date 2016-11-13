@@ -1,12 +1,12 @@
-package mutiny.codes.mvp.activities;
+package mutiny.codes.ncurilovic.mvp.activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import butterknife.Bind;
-import mutiny.codes.mvp.R;
-import mutiny.codes.mvp.mvp.Main;
-import mutiny.codes.mvp.mvp.presenters.MainPresenter;
+import mutiny.codes.ncurilovic.mvp.R;
+import mutiny.codes.ncurilovic.mvp.mvp.Main;
+import mutiny.codes.ncurilovic.mvp.mvp.presenters.MainPresenter;
 import timber.log.Timber;
 
 /**

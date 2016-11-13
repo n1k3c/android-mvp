@@ -1,4 +1,4 @@
-package mutiny.codes.mvp.activities;
+package mutiny.codes.ncurilovic.mvp.activities;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;

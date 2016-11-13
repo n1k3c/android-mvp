@@ -1,4 +1,4 @@
-package mutiny.codes.mvp;
+package mutiny.codes.ncurilovic.mvp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("mutiny.codes.mvp", appContext.getPackageName());
+        assertEquals("mutiny.codes.ncurilovic.mvp", appContext.getPackageName());
     }
 }

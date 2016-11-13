@@ -1,4 +1,4 @@
-package mutiny.codes.mvp;
+package mutiny.codes.ncurilovic.mvp;
 
 import android.app.Application;
 
