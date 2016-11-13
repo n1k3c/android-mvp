@@ -4,12 +4,15 @@ import javax.inject.Inject;
 
 import mutiny.codes.ncurilovic.mvp.mvp.Main;
 import mutiny.codes.ncurilovic.mvp.mvp.interactors.Interactor;
-import mutiny.codes.ncurilovic.mvp.mvp.listeners.Listener;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * Created by nikola on 12.11.16..
  */
-public class MainPresenter implements Main.Presenter, Listener<String> {
+public class MainPresenter implements Main.Presenter {
 
     Main.View view;
 
@@ -23,17 +26,25 @@ public class MainPresenter implements Main.Presenter, Listener<String> {
 
     @Override
     public void getMessage() {
-        sayHelloInteractor.getMessage(this);
-    }
+        sayHelloInteractor.getMessage()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        Timber.d("Completed!");
+                    }
 
-    @Override
-    public void onSuccess(String message) {
-        view.showMessage(message);
-    }
+                    @Override
+                    public void onError(Throwable e) {
+                        view.showError(e.toString());
+                    }
 
-    @Override
-    public void onFailure(String message) {
-        view.showError(message);
+                    @Override
+                    public void onNext(String message) {
+                        view.showMessage(message);
+                    }
+                });
     }
 
 }
